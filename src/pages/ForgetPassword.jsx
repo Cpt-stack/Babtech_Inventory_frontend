@@ -28,7 +28,7 @@ function ForgetPassword() {
         }
 
         try {
-            const response = await API.post("/forget", {
+            const response = await API.post("/auth/forget", {
                 email: email
             })
 
