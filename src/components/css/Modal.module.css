@@ -1,0 +1,145 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+    background: rgba(0, 21, 36, 0.68);
+    backdrop-filter: blur(4px);
+
+    animation: fadeIn 0.2s ease;
+
+}
+
+.modalCard {
+    width: 100%;
+    max-width: 420px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 2rem;
+    text-align: center;
+
+    background: var(--surface-card, #ffffff);
+    border: 1px solid var(--border-subtle, #e2e8f0);
+    border-radius: 12px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    animation: slideIn 0.25s ease;
+
+}
+
+.modalImage {
+    display: block;
+    width: 100%;
+    max-width: 210px;
+    max-height: 180px;
+    object-fit: contain;
+}
+
+.modalTitle {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.errorTitle {
+    color: var(--brandy, #9e2a2b);
+}
+
+.successTitle {
+    color: #166534;
+}
+
+.modalMessage {
+    width: 100%;
+    margin: 0;
+
+    color: var(--text-muted, #64748b);
+    font-size: 0.95rem;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+
+}
+
+.closeButton {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.8rem 1rem;
+
+    border: none;
+    border-radius: 6px;
+
+    background: var(--stormy-teal, #15616d);
+    color: #ffffff;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+}
+
+.closeButton {
+    background: var(--ink-black, #001524);
+}
+
+.closeButton {
+    outline: 3px solid var(--vivid-tangerine, #ff7d00);
+    outline-offset: 3px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+@media (max-width: 480px) {
+    .modalCard {
+        padding: 1.5rem;
+    }
+
+    .modalImage {
+        max-width: 160px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .overlay,
+    .modalCard {
+        animation: none;
+    }
+}

@@ -1,0 +1,187 @@
+.historyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header h1 {
+  font-size: 1.6rem;
+  color: var(--ink-black);
+  margin-bottom: 0.25rem;
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Controls Bar */
+.controlsBar {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.searchWrapper {
+  flex: 1;
+  min-width: 260px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--surface-card);
+  color: var(--text-main);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: var(--stormy-teal);
+}
+
+.filterGroup {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filterSelect {
+  padding: 0.65rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--surface-card);
+  color: var(--text-main);
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.filterSelect:focus {
+  border-color: var(--stormy-teal);
+}
+
+/* Table Card & Content */
+.tableContainer {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  overflow-x: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.table thead tr {
+  background-color: #fafbfc;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.table th {
+  padding: 0.85rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: #f7f9fb;
+}
+
+.subtext {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.remarksCell {
+  max-width: 220px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.emptyRow {
+  text-align: center;
+  padding: 2.5rem 1rem !important;
+  color: var(--text-muted);
+}
+
+/* Status Badges */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badgeActive {
+  background-color: var(--status-active-bg);
+  color: var(--status-active-text);
+}
+
+.badgeCompleted {
+  background-color: var(--status-returned-bg);
+  color: var(--status-returned-text);
+}
+
+.activeIndicator {
+  color: var(--vivid-tangerine);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.textDamaged {
+  color: var(--brandy);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .controlsBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchWrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .filterGroup {
+    width: 100%;
+  }
+
+  .filterGroup select {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .table {
+    min-width: 700px;
+  }
+}

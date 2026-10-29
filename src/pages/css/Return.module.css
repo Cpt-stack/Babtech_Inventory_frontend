@@ -1,0 +1,123 @@
+.returnContainer {
+  max-width: 620px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header h1 {
+  font-size: 1.6rem;
+  color: var(--ink-black);
+  margin-bottom: 0.25rem;
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.formCard {
+  background-color: var(--surface-card);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.formGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  font-size: 0.9rem;
+  color: var(--text-main);
+  background-color: #ffffff;
+  outline: none;
+  font-family: inherit;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-color: var(--stormy-teal);
+}
+
+.contextLoanCard {
+  background-color: var(--surface-card);
+  border-left: 4px solid var(--stormy-teal);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+
+/* .contextLoanCard h3 {
+  font-size: 0.95rem;
+  color: var(--ink-black);
+  margin-bottom: 0.5rem;
+} */
+
+.contextLoanCard p {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  margin: 0.25rem 0;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--stormy-teal);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover {
+  background-color: var(--ink-black);
+}
+
+.errorMessage {
+  background-color: #fee2e2;
+  color: var(--brandy);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.successMessage {
+  background-color: var(--status-returned-bg);
+  color: var(--status-returned-text);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .returnContainer {
+    max-width: 100%;
+    padding: 0 0.25rem;
+  }
+
+  .formCard {
+    padding: 1.25rem;
+  }
+}

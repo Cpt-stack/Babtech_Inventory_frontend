@@ -1,0 +1,163 @@
+.dashboardHeader {
+  margin-bottom: 2rem;
+}
+
+.Dashboard {
+  position: relative;
+}
+
+.dashboardHeader h1 {
+  font-size: 1.6rem;
+  color: var(--ink-black);
+  margin-bottom: 0.25rem;
+
+}
+
+.dashboardHeader p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.metricCard {
+  background-color: var(--surface-card);
+  padding: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.metricTitle {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.metricCount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--stormy-teal);
+}
+
+.transactionTable {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.transactionTable h3 {
+  font-size: 1.1rem;
+  color: var(--ink-black);
+  margin-bottom: 1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table thead th {
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.table tbody td {
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: #f7f7f8;
+}
+
+/* Status Badges */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badgeActive {
+  background-color: var(--status-active-bg);
+  color: var(--status-active-text);
+}
+
+.badgeReturned {
+  background-color: var(--status-returned-bg);
+  color: var(--status-returned-text);
+}
+
+.badgeDamaged {
+  background-color: var(--status-damaged-bg);
+  color: var(--status-damaged-text);
+}
+
+@media (max-width: 640px) {
+  .metricGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  .transactionTable {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .table {
+    min-width: 560px;
+  }
+
+  .modal {
+
+    min-height: 100vw;
+
+  }
+}
+
+@media (max-width: 380px) {
+  .metricGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.errorMessage {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.loader {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}

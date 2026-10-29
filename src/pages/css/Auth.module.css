@@ -1,0 +1,398 @@
+.authContainer {
+  min-height: 100vh;
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  gap: 20px;
+  justify-content: space-evenly;
+  background-color: #f4f6f8;
+  padding: 1.5rem;
+}
+
+.authCardContainer {
+  display: flex;
+  /* min-height: 100vh; */
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.authCard {
+  width: 100%;
+  max-width: 420px;
+
+  background-color: var(--surface-card, #ffffff);
+  border: 1px solid var(--border-subtle, #e2e8f0);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.authContainerImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+  height: auto;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+
+.authContainerImage img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+
+}
+
+.authContainerImage ::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(53, 65, 92, 0.14);
+
+}
+
+.authContainerImageWriteup {
+  position: absolute;
+  z-index: 1000;
+  inset: 0;
+  padding: 30px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.75rem;
+  align-items: center;
+  font-size: clamp(0.75rem, 1.5rem, 2rem);
+  text-align: center;
+  color: white;
+
+  font: 900;
+
+
+}
+
+.authContainerImageWriteup p {
+  text-align: center;
+  font-weight: 700;
+  color: #f1f5f9;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  text-align: center;
+  text-align: center;
+  max-width: 600px;
+  margin: 16px auto 0;
+}
+
+.authContainerImageWriteup h1 {
+  color: white;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+
+}
+
+.authContainerImageWriteup h2 ::-webkit-scrollbar {
+  display: none;
+}
+
+.authCard h2 {
+  font-size: 1.5rem;
+  color: var(--ink-black, #001524);
+  margin-bottom: 0.35rem;
+  text-align: center;
+
+}
+
+.authCardLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.Imgspan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: var(--border-subtle, #e2e8f0);
+  transition: all 0.35s ease;
+}
+
+.Imgspan:hover {
+  border: 2px solid #15616d;
+  cursor: pointer;
+
+}
+
+.authCardLogo span img {
+  /* height: auto; */
+  height: 30px;
+  /* width: 50%; */
+}
+
+.subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted, #64748b);
+  margin-bottom: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.15rem;
+}
+
+.formGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted, #475569);
+}
+
+.formGroup input,
+.formGroup select {
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle, #cbd5e1);
+  font-size: 0.9rem;
+  color: var(--text-main, #1e293b);
+  background-color: #ffffff;
+  outline: none;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  border-color: var(--stormy-teal, #15616d);
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--stormy-teal, #15616d);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover {
+  background-color: var(--ink-black, #001524);
+}
+
+.authFooter {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted, #64748b);
+  margin-top: 1.25rem;
+}
+
+.authFooter a {
+  color: var(--stormy-teal, #15616d);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.authFooter a:hover {
+  text-decoration: underline;
+}
+
+.authForget {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.errorMessage {
+  background-color: #fee2e2;
+  color: var(--brandy, #9e2a2b);
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.successMessage {
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(0, 21, 36, 0.65);
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+
+.modalCard {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  min-height: 180px;
+  height: auto;
+  padding: 2rem;
+  background-color: var(--surface-card, #ffffff);
+  border: 1px solid var(--border-subtle, #e2e8f0);
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  animation: slideIn 0.25s ease-in-out;
+}
+
+.modalCard .errorMessage {
+  width: 100%;
+  margin-bottom: 0;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.modalCard .successMessage {
+  width: 100%;
+  margin-bottom: 0;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  text-align: center;
+  color: var(--ink-black, #001524);
+}
+
+.modalCloseBtn {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--stormy-teal, #15616d);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modalCloseBtn {
+  background-color: var(--ink-black, #001524);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width : 768px) {
+  .authCardContainer {
+    display: flex;
+    /* min-height: 100vh; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: url("frontend\src\assets\Babtech.png");
+    z-index: 10;
+  }
+
+  .authContainerImage {
+    display: none;
+  }
+
+
+
+  .authContainerImage .authContainerImageWriteup {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem
+  }
+
+  .authContainerImageWriteup h2 {
+
+    font-size: 1.9rem;
+
+  }
+
+
+}
+
+@media (max-width: 1440px) {
+  .authContainerImageWriteup h2 {
+
+    font-size: 2rem;
+
+  }
+}
+
+@media (max-width: 1020px) {
+  .authContainerImageWriteup h2 {
+
+    font-size: 1.8rem;
+
+  }
+}
+
+@media (max-width: 400px) {
+  .authCard {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .authContainerImageWriteup h2 {
+
+    font-size: 1.6rem;
+
+  }
+}

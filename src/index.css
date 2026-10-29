@@ -1,0 +1,61 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink-black: #001524;
+  --stormy-teal: #15616d;
+  --papaya-whip: #ffecd1;
+  --vivid-tangerine: #ff7d00;
+  --brandy: #78290f;
+
+  --bg-main: #f9f9fb;
+  --surface-card: #ffffff;
+  --text-main: #1f2421;
+  --text-muted: #6b7280;
+  --border-subtle: #e5e7eb;
+
+  --status-active-bg: var(--papaya-whip);
+  --status-active-text: #9a4800;
+  --status-returned-bg: #e8f5e9;
+  --status-returned-text: #2e7d32;
+  --status-damaged-bg: #fbe9e7;
+  --status-damaged-text: var(--brandy);
+
+  --sidebar-width: 250px;
+  --navbar-height: 64px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  /* height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center; */
+}
+
+.modalError {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 350px;
+  z-index: 10;
+  /* box-shadow: 1px 1px 10px var(--ink-black); */
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  text-align: left;
+}

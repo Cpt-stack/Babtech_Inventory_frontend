@@ -1,0 +1,48 @@
+.navbar {
+height: var(--navbar-height, 70px);
+padding: 0 2rem;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+background-color: var(--surface-card, #ffffff);
+border-bottom: 1px solid var(--border-subtle, #e2e8f0);
+
+}
+
+.pageTitle h1 {
+margin: 0;
+
+font-size: 1.15rem;
+font-weight: 700;
+
+color: var(--ink-black, #001524);
+/* text-shadow: 5px 5px 10px  var(--ink-black); */
+
+
+}
+
+.hamburger {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 42px;
+        height: 42px;
+
+        border: none;
+        background: transparent;
+
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+}

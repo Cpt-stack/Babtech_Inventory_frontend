@@ -1,0 +1,556 @@
+.sidebar {
+
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+
+  width: 250px;
+  min-width: 250px;
+  height: 100vh;
+  background-color: var(--ink-black);
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+/* gap: 12px; */
+
+  color: var(--surface-card);
+
+  border-right: 1px solid var(--stormy-teal);
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  transition:
+    width 0.25s ease,
+    min-width 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+
+  z-index: 1000;
+}
+
+
+
+/* DESKTOP SIDEBAR WIDTH */
+
+.expanded {
+  width: 250px;
+  min-width: 250px;
+}
+
+.collapsed {
+  width: 78px;
+  min-width: 78px;
+}
+
+/* BRAND AREA */
+
+
+.brandArea {
+  min-height: 50px;
+  padding: 18px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  border-bottom: 1px solid var(--text-muted);
+}
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 0;
+
+  color: #fff;
+  text-decoration: none;
+
+  overflow: hidden;
+}
+
+.brandLogo img {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+
+  object-fit: cover;
+  border-radius: 11px;
+
+  border: 2px solid rgba(253, 240, 213, 0.18);
+
+}
+
+
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 14px;
+  line-height: 1.35;
+
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+
+/* COLLAPSE BUTTON */
+
+
+.collapseButton {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--text-muted);
+
+  border-radius: 8px;
+
+  background: transparent;
+  color: #fff;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+
+/* NAVIGATION AREA */
+
+
+.sidebarNav {
+  flex: 1;
+  padding: 22px 12px;
+}
+
+.sectionLabel {
+  margin: 0 0 14px;
+  padding: 0 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.sidebarNav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.navLink {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: 46px;
+  padding: 12px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  color: var(--text-muted);
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  /* transition: all 0.2s ease; */
+}
+
+.navIcon {
+  width: 20px;
+  min-width: 20px;
+
+  text-align: center;
+  font-size: 16px;
+
+  transition: color 0.2s ease;
+}
+
+.navText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+/* Navigation hover */
+
+.navLink:hover {
+   background: var(--stormy-teal); 
+  color: var(--surface-card); 
+}
+
+.navLink:hover .navIcon {
+  color: var(--surface-card);
+}
+
+
+/* Active navigation item */
+
+.activeLink {
+  background: var(--stormy-teal);
+  color: var(--papaya-whip); 
+
+  border-color: rgba(253, 240, 213, 0.08);
+}
+
+
+
+
+
+/* Keyboard accessibility */
+
+.navLink:focus-visible {
+  /* outline: 2px solid var(--vivid-tangerine); */
+  outline-offset: 2px;
+}
+
+
+
+/* PROFILE SECTION */
+
+
+.profileSection {
+  margin-top: auto;
+  padding: 14px 12px;
+
+  /* border-top: 1px solid var(--sidebar-border); */
+}
+
+.profileCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: var(--stormy-teal);
+  color: var(--surface-card);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  border: 1px solid rgba(253, 240, 213, 0.12);
+}
+
+.profileDetails {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.username {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: var(--papaya-whip);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.roleBadge {
+  width: fit-content;
+
+  padding: 3px 7px;
+
+  border-radius: 5px;
+
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.adminBadge {
+  background: rgba(247, 127, 0, 0.15);
+
+}
+
+.technicianBadge {
+  background: rgba(38, 70, 83, 0.8);
+  color: #B9E3ED;
+}
+
+.viewerBadge {
+  background: rgba(255, 255, 255, 0.08);
+  color: #C6CBD2;
+}
+
+
+/* Logout button */
+
+.logoutButton {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  background: transparent;
+  color: var(--stormy-teal);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.logoutButton:hover {
+  background: rgba(164, 74, 63, 0.18);
+  color: #F08B7D;
+  border-color: rgba(164, 74, 63, 0.3);
+}
+
+.logoutButton:focus-visible {
+  outline: 2px solid var(--vivid-tangerine);
+  outline-offset: 2px;
+}
+
+
+/* Sign-in link */
+
+.loginLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 11px;
+
+  /* border: 1px solid var(--sidebar-border); */
+  border-radius: 9px;
+
+  color: var(--papaya-whip);
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.loginLink:hover {
+  background: var(--stormy-teal);
+  border-color: var(--stormy-teal);
+}
+
+
+
+/* COLLAPSED DESKTOP SIDEBAR */
+
+
+.collapsed .brandArea {
+  justify-content: center;
+  padding: 18px 8px;
+}
+
+.collapsed .brandText,
+.collapsed .sectionLabel,
+.collapsed .navText,
+.collapsed .profileDetails {
+  display: none;
+}
+
+.collapsed .brandLogo {
+  display: none;
+}
+
+.collapsed .collapseButton {
+  width: 36px;
+  height: 36px;
+}
+
+.collapsed .sidebarNav {
+  padding: 22px 10px;
+}
+
+.collapsed .navLink {
+  justify-content: center;
+  padding: 12px 8px;
+}
+
+.collapsed .profileCard {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.collapsed .logoutButton {
+  margin-top: 4px;
+}
+
+
+/* Tooltip when collapsed */
+
+.collapsed .navItem:hover::after {
+  content: attr(data-tooltip);
+
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 12px);
+
+  transform: translateY(-50%);
+
+  padding: 9px 12px;
+
+
+
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  pointer-events: none;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+
+  z-index: 1300;
+}
+
+
+
+/* MOBILE SIDEBAR */
+
+
+@media (max-width: 768px) {
+
+  .sidebar,
+  .expanded,
+  .collapsed {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 270px;
+    min-width: 270px;
+    height: 100vh;
+    height: 100dvh;
+
+    transform: translateX(-100%);
+    visibility: hidden;
+
+    /* background: var(--ink-black); */
+
+    box-shadow: none;
+
+    z-index: 1200;
+  }
+
+
+  /* Opened by the Navbar hamburger */
+
+  .mobileOpen {
+    transform: translateX(0);
+    visibility: visible;
+
+    box-shadow: 12px 0 35px rgba(0, 0, 0, 0.25);
+  }
+
+
+  /* Restore full sidebar layout on mobile */
+
+  .collapsed .brandArea {
+    justify-content: space-between;
+    padding: 18px 14px;
+  }
+
+  .collapsed .brandLogo {
+    display: flex;
+  }
+
+  .collapsed .brandText {
+    display: flex;
+  }
+
+  .collapsed .sectionLabel,
+  .collapsed .navText,
+  .collapsed .profileDetails {
+    display: initial;
+  }
+
+  .collapsed .navLink {
+    justify-content: flex-start;
+    padding: 12px;
+  }
+
+  .collapsed .sidebarNav {
+    padding: 22px 12px;
+  }
+
+  .collapsed .profileCard {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .collapsed .logoutButton {
+    margin-top: 0;
+  }
+
+  
+  .collapseButton {
+    display: none;
+  }
+
+  .collapsed .loginLink span{
+    visibility: hidden;
+  }
+
+
+
+
+  .collapsed .navItem:hover::after {
+    display: none;
+  }
+
+}
