@@ -1,43 +1,73 @@
-import React , {useEffect , useState}from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./css/Auth.module.css"
 import Logo from "../assets/Babtech.png"
-import {Link} from "react-router-dom"
-
+import { Link } from "react-router-dom"
+import API from '../services/api'
 
 function ForgetPassword() {
-    const [email , setEmail] = useState("");
-    const [error , setError] = useState("")
-    const [success , setSuccess] = useState("")
+    const [email, setEmail] = useState("");
+    const [error, setError] = useState("")
+    const [success, setSuccess] = useState("")
 
-    const [loading ,setLoader] = useState(false)
+    const [loading, setLoader] = useState(false)
 
-    function handleChange(e){
-        const {value} = e.target;
+    function handleChange(e) {
+        const { value } = e.target;
         setEmail(value);
     }
 
-    function handleSubmit(e){
+    async function handleSubmit(e) {
         e.preventDefault();
         setError("");
         setSuccess("");
         setLoader(true)
 
 
-        if(!email || !email.trim()){
+        if (!email || !email.trim()) {
             setError("Please Enter an Email")
         }
 
+        try {
+            const response = await API.post("/forget", {
+                email: email
+            })
+
+            setSuccess("Email has been sent")
+
+
+
+        } catch (error) {
+            setError("Something Went Wrong", error.message)
+
+
+        }
 
     }
-  return (
-    
+
+    useEffect(() => {
+        setTimeout(() => {
+            setSuccess("")
+        }, 5000)
+
+        return () => {
+            clearTimeout()
+        }
+    }, [success]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setError("")
+        }, 5000)
+
+        return () => {
+            clearTimeout()
+        }
+    }, [error])
+    return (
+
         <div className={styles.authContainer}>
 
-{/* 
-            <div className={styles.authContainerImage}>
-                <img src={svg} alt="Display Image" />
 
-            </div> */}
 
             <div className={styles.authCardContainer}>
 
@@ -50,9 +80,9 @@ function ForgetPassword() {
                     <h2>Babtech HardWare Inventory</h2>
                     <p className={styles.subtitle}>Enter Your Email</p>
 
-{/* 
+
                     {error && <div className={styles.errorMessage}>{error}</div>}
-                    {success && <div className={styles.successMessage}>{success}</div>} */}
+                    {success && <div className={styles.successMessage}>{success}</div>}
 
                     <form action="" onSubmit={handleSubmit}>
                         <div className={styles.formGroup}>
@@ -61,7 +91,7 @@ function ForgetPassword() {
                         </div>
 
 
-                        <button type='submit' className={styles.submitBtn} disabled={loading}>{loading ? "Sent..." : "Send Link"}</button>
+                        <button type='submit' className={styles.submitBtn} disabled={loading}>{loading ? "Sent" : "Send Link"}</button>
 
 
                         <p className={styles.authFooter}>Dont have an account? <Link to="/register">Register here</Link></p>
@@ -72,7 +102,7 @@ function ForgetPassword() {
 
         </div>
 
-  )
+    )
 }
 
 export default ForgetPassword
