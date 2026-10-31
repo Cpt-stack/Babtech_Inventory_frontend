@@ -1,9 +1,9 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
-import { isTechnician } from '../utils/auth'
+import { isAdmin, isTechnician } from '../utils/auth'
 
 function ProtectedRoute({children}) {
-    if(!isTechnician){
+    if(!isTechnician && !isAdmin){
         return <Navigate to="/equipment" replace/>
     }
   return children
