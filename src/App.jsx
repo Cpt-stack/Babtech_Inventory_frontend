@@ -13,7 +13,7 @@ import ProtectedRoute from '../src/components/ProtectedRoute';
 import Admin from './pages/Admin';
 import ForgetPassword from './pages/ForgetPassword';
 import Reset from './pages/Reset';
-import IndexRedirect from './components/IndexRedirect';
+
 
 
 function App() {

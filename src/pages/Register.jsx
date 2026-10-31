@@ -3,7 +3,9 @@ import styles from "./css/Auth.module.css";
 import { useNavigate, Link } from 'react-router-dom';
 import API from "../services/api.js";
 import Logo from "../assets/Babtech.png";
-import svg from "../assets/Signup-rafiki.svg";
+// import svg from "../assets/Signup-rafiki.svg";
+import svg from "../assets/backgroundLogo.jpg";
+
 
 function Register() {
     const [formData, setFormData] = useState({
@@ -107,8 +109,21 @@ function Register() {
     return (
         <div className={styles.authContainer}>
 
+            {/* <div className={styles.authContainerImage}>
+                <img src={svg} alt="Display Image" />
+            </div> */}
+
             <div className={styles.authContainerImage}>
                 <img src={svg} alt="Display Image" />
+                <div className={styles.authContainerImageWriteup}>
+                    <h1>Babtech Hardware Inventory</h1>
+
+                    <p>
+                       Create an account to access the Babtech Inventory Management System. <br />
+                       Register to manage equipment, monitor asset records,
+                        track transactions, and keep inventory operations organized and efficient.
+                    </p>
+                </div>
             </div>
 
             {/* Error/Success Modal */}
@@ -156,113 +171,115 @@ function Register() {
                 </div>
             )}
 
-            <div className={styles.authCard}>
+            <div className={styles.authCardContainer}>
+                <div className={styles.authCard}>
 
-                <div className={styles.authCardLogo}>
-                    <span className={styles.Imgspan}>
-                        <img src={Logo} alt="Babtech Logo" />
-                    </span>
-                </div>
-
-                <h2>Create an Account</h2>
-
-                <p className={styles.subtitle}>
-                    Register to access Babtech Hardware Inventory
-                </p>
-
-                <form onSubmit={handleSubmit}>
-
-                    <div className={styles.formGroup}>
-                        <label htmlFor="full_name">Full Name</label>
-
-                        <input
-                            type="text"
-                            id="full_name"
-                            name="full_name"
-                            value={formData.full_name}
-                            onChange={handleChange}
-                            required
-                            placeholder="Walter Ijeoma"
-                        />
+                    <div className={styles.authCardLogo}>
+                        <span className={styles.Imgspan}>
+                            <img src={Logo} alt="Babtech Logo" />
+                        </span>
                     </div>
 
-                    <div className={styles.formGroup}>
-                        <label htmlFor="email">Email Address</label>
+                    <h2>Create an Account</h2>
 
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                            placeholder="e.g user@gmail.com"
-                        />
-                    </div>
+                    <p className={styles.subtitle}>
+                        Register to access Babtech Hardware Inventory
+                    </p>
 
-                    <div className={styles.formGroup}>
-                        <label htmlFor="password">Password</label>
+                    <form onSubmit={handleSubmit}>
 
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            required
-                            minLength={6}
-                            placeholder="At least 6 characters"
-                        />
-                    </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="full_name">Full Name</label>
 
-                    <div className={styles.formGroup}>
-                        <label htmlFor="confirmPassword">
-                            Confirm Password
-                        </label>
+                            <input
+                                type="text"
+                                id="full_name"
+                                name="full_name"
+                                value={formData.full_name}
+                                onChange={handleChange}
+                                required
+                                placeholder="Walter Ijeoma"
+                            />
+                        </div>
 
-                        <input
-                            type="password"
-                            id="confirmPassword"
-                            name="confirmPassword"
-                            value={formData.confirmPassword}
-                            onChange={handleChange}
-                            required
-                            placeholder="Re-type password"
-                        />
-                    </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="email">Email Address</label>
 
-                    <div className={styles.formGroup}>
-                        <label htmlFor="role">Account Role</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                                placeholder="e.g user@gmail.com"
+                            />
+                        </div>
 
-                        <select
-                            name="role"
-                            id="role"
-                            value={formData.role}
-                            onChange={handleChange}
-                            required
+                        <div className={styles.formGroup}>
+                            <label htmlFor="password">Password</label>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                value={formData.password}
+                                onChange={handleChange}
+                                required
+                                minLength={6}
+                                placeholder="At least 6 characters"
+                            />
+                        </div>
+
+                        <div className={styles.formGroup}>
+                            <label htmlFor="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                value={formData.confirmPassword}
+                                onChange={handleChange}
+                                required
+                                placeholder="Re-type password"
+                            />
+                        </div>
+
+                        <div className={styles.formGroup}>
+                            <label htmlFor="role">Account Role</label>
+
+                            <select
+                                name="role"
+                                id="role"
+                                value={formData.role}
+                                onChange={handleChange}
+                                required
+                            >
+                                <option value="Student">Student</option>
+                            </select>
+                        </div>
+
+                        <button
+                            type="submit"
+                            className={styles.submitBtn}
+                            disabled={loading}
                         >
-                            <option value="Student">Student</option>
-                        </select>
-                    </div>
+                            {loading ? "Creating Account..." : "Create Account"}
+                        </button>
 
-                    <button
-                        type="submit"
-                        className={styles.submitBtn}
-                        disabled={loading}
-                    >
-                        {loading ? "Creating Account..." : "Create Account"}
-                    </button>
+                        <p className={styles.authFooter}>
+                            Already have an account?{" "}
+                            <Link to="/login">Sign In</Link>
+                        </p>
 
-                    <p className={styles.authFooter}>
-                        Already have an account?{" "}
-                        <Link to="/login">Sign In</Link>
-                    </p>
+                        <p className={styles.authFooter}>
+                            Made By: Israel Brian 240591398
+                        </p>
 
-                    <p className={styles.authFooter}>
-                        Made By: Israel Brian 240591398
-                    </p>
-
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     );

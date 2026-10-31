@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import styles from "./css/Auth.module.css";
 import API from "../services/api.js";
 import Logo from "../assets/Babtech.png";
-import svg from "../assets/StudentPicture.jpg";
+import svg from "../assets/backgroundLogo.jpg";
 
 function Login() {
     const [formData, setFormData] = useState({

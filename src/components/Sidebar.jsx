@@ -7,11 +7,12 @@ import { faGauge, faComputer, faArrowRightFromBracket, faArrowRightToBracket, fa
 import { getCurrentUser, isAdmin, isTechnician, logout } from "../utils/auth";
 
 import styles from "./css/Sidebar.module.css";
+import { useEffect } from "react";
 
 
 function Sidebar({ isSidebarOpen, closeSidebar }) {
 
-    const [isExpanded, setIsExpanded] = useState(true);
+    const [isExpanded, setIsExpanded] = useState((localStorage.getItem("saveState") === true ));
 
     const user = getCurrentUser();
 
@@ -22,8 +23,11 @@ function Sidebar({ isSidebarOpen, closeSidebar }) {
 
     const fullName = user?.full_name || "Guest User";
 
-    const initials = fullName.split(/\s+/).filter(Boolean).map((namePart)=> namePart.charAt(0)
-    ).slice(0, 2).join("").toUpperCase();
+    const initials = fullName.split(/\s+/).filter(Boolean).map((namePart) => namePart.charAt(0)).slice(0, 2).join("").toUpperCase();
+
+    useEffect(() => {
+        localStorage.setItem("saveState", isExpanded.toString())
+    }, [isExpanded])
 
     // Navigation configuration
     const navigationItems = [
@@ -139,13 +143,13 @@ function Sidebar({ isSidebarOpen, closeSidebar }) {
                 </p>
 
                 <ul>
-                    {visibleNavigationItems.map(function (item) {
-
+                    {visibleNavigationItems.map((item) => {
                         return (
                             <li key={item.path} className={styles.navItem} data-tooltip={item.label}>
 
                                 <NavLink to={item.path} end={item.end} onClick={handleNavigation}
                                     className={function ({ isActive }) { return [styles.navLink, isActive ? styles.activeLink : ""].filter(Boolean).join(" ") }}
+                                   
                                     aria-label={item.label}
                                     title={!isExpanded ? item.label : undefined} >
 
@@ -158,6 +162,9 @@ function Sidebar({ isSidebarOpen, closeSidebar }) {
                         );
 
                     })}
+
+
+
                 </ul>
 
             </nav>

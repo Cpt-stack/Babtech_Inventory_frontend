@@ -32,8 +32,9 @@ function ForgetPassword() {
                 email: email
             })
 
-            setSuccess("Email has been sent")
-
+            setTimeout(()=>{
+                setSuccess("Email has been sent")
+            },3500)
 
 
         } catch (error) {
@@ -47,7 +48,7 @@ function ForgetPassword() {
     useEffect(() => {
         setTimeout(() => {
             setSuccess("")
-        }, 5000)
+        }, 3000)
 
         return () => {
             clearTimeout()
