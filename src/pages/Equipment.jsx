@@ -65,7 +65,7 @@ function Equipment() {
       wrapperStyle={{ margin: '20px' }}
       wrapperClass="custom-loader"
       visible={true}
-    />;
+    />
   </div>
   if (error) return <p className="modalError">{error}</p>
 

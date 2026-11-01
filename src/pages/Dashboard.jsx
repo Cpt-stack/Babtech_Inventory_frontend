@@ -52,7 +52,7 @@ function Dashboard() {
         wrapperStyle={{ margin: '20px' }}
         wrapperClass="custom-loader"
         visible={true}
-      />;
+      />
     </div>
   )
 

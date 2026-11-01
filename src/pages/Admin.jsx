@@ -82,7 +82,7 @@ function Admin() {
                         wrapperStyle={{ margin: '20px' }}
                         wrapperClass="custom-loader"
                         visible={true}
-                    />;
+                    />
                 </div>
             ) : (
                 <div className={styles.tableCard}>
