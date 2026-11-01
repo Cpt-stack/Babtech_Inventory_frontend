@@ -47,7 +47,7 @@ function Reset() {
         setLoading(true);
 
         try {
-            const response = await API.post(`/reset/${token}`, {
+            const response = await API.post(`/auth/reset/${token}`, {
                 password: Password.password
             });
             setSuccess(response.data.message || "Password reset successfully!");
